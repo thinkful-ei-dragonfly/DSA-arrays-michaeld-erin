@@ -94,10 +94,25 @@ function main(){
   arr.push(45);
   arr.push(10);
 
+
+
+  arr.remove(5);
+  arr.remove(4);
+  arr.remove(3);
+  arr.remove(2);
+  arr.remove(1);
+  arr.remove(0);
+  //arr._resize(1);
   console.log(arr)
+
+  arr.push("tauhida");
+
+  console.log(arr)
+  console.log(arr.get(0));
 
 }
 
 main();
+
 
 module.exports = Array;
