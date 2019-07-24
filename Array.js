@@ -1,3 +1,5 @@
+'use strict'l
+
 const mem = require('./Memory');
 const memory = new mem();
 
@@ -58,20 +60,12 @@ class Array {
 
   _resize(size) {
     const oldPointer = this.pointer;
-    this.pointer = memory.allocate(size);function main(){
+    this.pointer = memory.allocate(size);
 
-      // create an instance of the Array cls
-      let arr = new Array();
-    
-      //add item
-      arr.push(3);
-    
-      console.log(arr)
-    
-    }
     if (this.pointer === null) {
       throw new Error('Out of memory');
     }
+
     memory.copy(this.pointer, oldPointer, this.length);
     memory.free(oldPointer);
     this._capacity = size;
@@ -88,27 +82,25 @@ function main(){
 
   //add item
   arr.push(3);
-  arr.push(5);
-  arr.push(15);
-  arr.push(19);
-  arr.push(45);
-  arr.push(10);
+  // arr.push(5);
+  // arr.push(15);
+  // arr.push(19);
+  // arr.push(45);
+  // arr.push(10);
 
+  // arr.remove(5);
+  // arr.remove(4);
+  // arr.remove(3);
+  // arr.remove(2);
+  // arr.remove(1);
+  // arr.remove(0);
+ 
+  // console.log(arr)
 
-
-  arr.remove(5);
-  arr.remove(4);
-  arr.remove(3);
-  arr.remove(2);
-  arr.remove(1);
-  arr.remove(0);
-  //arr._resize(1);
-  console.log(arr)
-
-  arr.push("tauhida");
+  // arr.push("tauhida");
 
   console.log(arr)
-  console.log(arr.get(0));
+  // console.log(arr.get(0));
 
 }
 
