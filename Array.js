@@ -1,4 +1,5 @@
-import memory from './memory';
+const mem = require('./Memory');
+const memory = new mem();
 
 class Array {
   constructor () {
@@ -57,7 +58,17 @@ class Array {
 
   _resize(size) {
     const oldPointer = this.pointer;
-    this.pointer = memory.allocate(size);
+    this.pointer = memory.allocate(size);function main(){
+
+      // create an instance of the Array cls
+      let arr = new Array();
+    
+      //add item
+      arr.push(3);
+    
+      console.log(arr)
+    
+    }
     if (this.pointer === null) {
       throw new Error('Out of memory');
     }
@@ -67,5 +78,26 @@ class Array {
   }
 };
 Array.SIZE_RATIO = 3;
+
+function main(){
+
+  Array.SIZE_RATIO = 3;
+
+  // create an instance of the Array cls
+  let arr = new Array();
+
+  //add item
+  arr.push(3);
+  arr.push(5);
+  arr.push(15);
+  arr.push(19);
+  arr.push(45);
+  arr.push(10);
+
+  console.log(arr)
+
+}
+
+main();
 
 module.exports = Array;
