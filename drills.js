@@ -54,8 +54,10 @@ function removeChars(string, textToRemove){
       console.log(`This is the ${i} run of the loop`);
       console.log(textToRemove[i]);
     for(let j = 0; j < string.length; j++){
-      result.replace(textToRemove[i], 'hi');
-      console.log(string[j]);
+      if(string[j] === textToRemove[i]) {
+        console.log('found');
+        result.replace(textToRemove[i], '');
+      }
     }
   }
   return result;
