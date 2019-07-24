@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
-
+'use strict';
 
 function urlify(string) {
   let result = '';
@@ -79,3 +79,36 @@ function removeChars(string, textToRemove) {
 }
 
 console.log(removeChars('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'));
+
+function product(array){
+  let output = [];
+  for(let i=0; i<array.length; i++){
+    let newArray = array.slice();
+    let otherValues = newArray.splice(i,1);
+    // console.log(newArray[0]* newArray[1]* newArray[2]);
+    output.push(newArray[0]* newArray[1]* newArray[2]);
+      }
+  return output;
+}
+
+// console.log(product([1, 3, 9, 4]));
+
+function arraySearch(array){
+  let result = [];
+  let currentRow = 0;
+  let currentColumn = 0;
+  for(let i=0; i < array.length; i++){
+    currentRow = i;
+    if(array[i][0] === 0) {
+      console.log('hello');
+    }
+  }
+}
+
+const input = [[1,0,1,1,0],
+[0,1,1,1,0],
+[1,1,1,1,1],
+[1,0,1,1,1],
+[1,1,1,1,1]];
+
+console.log(arraySearch(input));
