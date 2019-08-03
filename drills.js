@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
-'use strict';
+
 
 function urlify(string) {
   let result = '';
@@ -78,37 +78,89 @@ function removeChars(string, textToRemove) {
   return newStringMod;
 }
 
-console.log(removeChars('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'));
+// console.log(removeChars('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou'));
 
-function product(array){
+function product(array) {
   let output = [];
-  for(let i=0; i<array.length; i++){
+  for (let i = 0; i < array.length; i++) {
     let newArray = array.slice();
-    let otherValues = newArray.splice(i,1);
+    let otherValues = newArray.splice(i, 1);
     // console.log(newArray[0]* newArray[1]* newArray[2]);
-    output.push(newArray[0]* newArray[1]* newArray[2]);
-      }
+    output.push(newArray[0] * newArray[1] * newArray[2]);
+  }
   return output;
 }
 
 // console.log(product([1, 3, 9, 4]));
 
-function arraySearch(array){
-  let result = [];
-  let currentRow = 0;
-  let currentColumn = 0;
-  for(let i=0; i < array.length; i++){
-    currentRow = i;
-    if(array[i][0] === 0) {
-      console.log('hello');
+
+// # 11 -------
+// 2D Array
+//
+function setZeroRowCol(matrix){
+  const zeroRows = [];
+  const zeroCols = [];
+
+  for (let i=0; i<matrix.length; i++) {
+    let row = matrix[i];
+    for (let j=0; j<row.length; j++) {
+      const item = row[j];
+      if (item === 0) {
+        zeroRows[i] = true;
+        zeroCols[j] = true;
+      }
     }
   }
+
+  for (let i=0; i<matrix.length; i++) {
+    let row = matrix[i];
+    for (let j=0; j<row.length; j++) {
+      if (zeroRows[i] || zeroCols[j]) {
+        row[j] = 0;
+      }
+    }
+  }
+  return matrix;
 }
 
-const input = [[1,0,1,1,0],
-[0,1,1,1,0],
-[1,1,1,1,1],
-[1,0,1,1,1],
-[1,1,1,1,1]];
+let inMatrix = [[1,0,1,1,0],
+  [0,1,1,1,0],
+  [1,1,1,1,1],
+  [1,0,1,1,1],
+  [1,1,1,1,1]];
 
-console.log(arraySearch(input));
+// console.log(setZeroRowCol(inMatrix));
+
+
+// [ [ 0, 0, 0, 0, 0 ],
+//   [ 0, 0, 0, 0, 0 ],
+//   [ 0, 0, 1, 1, 0 ],
+//   [ 0, 0, 0, 0, 0 ],
+//   [ 0, 0, 1, 1, 0 ] ]
+
+
+/* ---------------------------------------------
+ 12. String rotation
+Given 2 strings, str1 and str2, write a program that
+ checks if str2 is a rotation of str1.
+
+Input: amazon, azonma
+
+Output: False
+
+Input: amazon, azonam
+
+Output: true */
+
+
+function stringRotation(string1, string2){
+  return (string2 + string2).indexOf(string1) !== -1;
+
+}
+
+let inString1 = 'amazon';
+let inString2a = 'azonma';
+let inString2b = 'azonam';
+
+console.log(stringRotation(inString1, inString2a));
+console.log(stringRotation(inString1, inString2b));

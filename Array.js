@@ -1,5 +1,3 @@
-'use strict'l
-
 const mem = require('./Memory');
 const memory = new mem();
 
