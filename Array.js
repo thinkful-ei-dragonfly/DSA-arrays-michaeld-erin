@@ -1,4 +1,4 @@
-'use strict'l
+'use strict';
 
 const mem = require('./Memory');
 const memory = new mem();
@@ -77,7 +77,7 @@ function main(){
 
   Array.SIZE_RATIO = 3;
 
-  // create an instance of the Array cls
+  // create an instance of the Array class
   let arr = new Array();
 
   //add item
